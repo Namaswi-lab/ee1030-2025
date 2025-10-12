@@ -1,0 +1,90 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{12.385}
+\author{EE25BTECH11060 - V.Namaswi}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+\textbf{Question}\\
+Given the following matrix equation 
+ \[
+A_{m \times n} X_{x \times 1} = b_{m \times 1}
+\]  the nature of this system of equations is \\
+\begin{multicols}{2}
+    \begin{enumerate}
+\item  over determined if $m>n$
+ \item  under determined if $m<n$
+ \item  even determined if $m=n$
+ \item  determined by rank of the matrix 
+    \end{enumerate}
+\end{multicols}
+\textbf{Solution}\\
+Given the system of equations 
+\[
+\Vec{A}_{m \times n} \Vec{X}_{n \times 1} = \Vec{b}_{m \times 1},
+\] 
+As m determine number of equations and n number of unknowns\\ 
+  
+\begin{itemize}
+    \item If $m > n$, there are more equations than unknowns   \textit{over-determined}.
+    \item If $m < n$, there are fewer equations than unknowns   \textit{under-determined}.
+    \item If $m = n$, the system is \textit{even-determined} (square system).
+    \end{itemize}
+However, just knowing $m$ and $n$ does \textbf{not} guarantee a solution, because some equations may be \textbf{linearly dependent}.
+
+\begin{itemize}
+    \item The rank of $A$ gives the number of \textbf{independent equations}.
+    \item For a square system ($m=n$), a unique solution exists only if $\text{rank}(A) = n$.
+    \item If $\text{rank}(A) < n$, the system may have \textbf{no solution or infinitely many solutions}.
+    \item For non-square systems ($m \neq n$), the rank still determines if a solution exists and how many solutions are possible.
+\end{itemize}
+
+\textbf{Conclusion:}  
+
+The actual nature of the system depends on the \textbf{rank of the matrix $A$}, not just on the number of equations and unknowns.  
+\end{document}
